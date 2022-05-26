@@ -1,0 +1,83 @@
+.header{
+  padding: 48px 0 31px;
+  position: fixed;
+  background-color: #FAFAFA;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: all ease 300ms;
+  &.scroll-nav{
+    padding: 20px 0 20px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
+  }
+  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: static;
+    z-index: 2;
+  }
+  &-logo{
+    width: 205px;
+    font-family: $monserant;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 17px 15px;
+    background: linear-gradient(105.44deg, #121212 0%, #121777 85.63%);
+    border-radius: 20px;
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+  }
+  &-nav{
+    width: calc(100% - 220px);
+    display: flex;
+    justify-content: space-between;
+    a{
+      font-family: $monserant;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+      color: #000000;
+      &:hover{
+        color: #E9BC1D;
+      }
+    }
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 80% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.header-overlay{
+  background: rgba(18, 23, 119, .3);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  transition: all ease 300ms;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  &.active{
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+  }
+}
